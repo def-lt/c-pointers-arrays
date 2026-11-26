@@ -1,4 +1,4 @@
-# Компилирует и запускает все программы по очереди (PowerShell)
+﻿# Компилирует и запускает все программы по очереди (PowerShell)
 Get-ChildItem -Filter "урок*.c" | Sort-Object Name | ForEach-Object {
     $exe = $_.BaseName + ".exe"
     Write-Host "`n=== $($_.Name) ===" -ForegroundColor Yellow
