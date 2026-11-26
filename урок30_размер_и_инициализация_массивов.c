@@ -2,9 +2,6 @@
  * Урок #30. Вычисление размера массива. Инициализация массивов
  */
 #include <stdio.h>
-#ifdef _WIN32
-#include <windows.h>   /* SetConsoleOutputCP - русский текст в консоли Windows */
-#endif
 #include <stdlib.h>
 
 #define TOTAL_MARKS 13
@@ -21,15 +18,12 @@ static void print_int(const char *name, const int *a, size_t n)
 
 int main(void)
 {
-#ifdef _WIN32
-    SetConsoleOutputCP(CP_UTF8);
-#endif
     /* 1. Размер массива */
     int marks[TOTAL_MARKS] = {1, 2, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0};
     size_t bytes = sizeof(marks);
     size_t size1 = sizeof(marks) / sizeof(marks[0]);
     size_t size2 = sizeof(marks) / sizeof(*marks);
-    printf("1) sizeof(marks) = %zu байт, элементов: %zu (= %zu)\n\n", bytes, size1, size2);
+    printf("1) sizeof(marks) = %zu bayt, elementov: %zu (= %zu)\n\n", bytes, size1, size2);
 
     /* 2. Частичная инициализация - остальные нули */
     int part[TOTAL_MARKS] = {1, 2, 3};
@@ -37,7 +31,7 @@ int main(void)
 
     /* 3. Размер берётся из списка инициализации */
     int coords[] = {10, -2, 30};
-    printf("3) coords[] = {10, -2, 30}, элементов: %zu\n",
+    printf("3) coords[] = {10, -2, 30}, elementov: %zu\n",
            sizeof(coords) / sizeof(*coords));
 
     /* 4. Назначенные инициализаторы (C99) */
