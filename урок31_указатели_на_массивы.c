@@ -2,9 +2,15 @@
  * Урок #31. Указатели на массивы
  */
 #include <stdio.h>
+#ifdef _WIN32
+#include <windows.h>   /* SetConsoleOutputCP - русский текст в консоли Windows */
+#endif
 
 int main(void)
 {
+#ifdef _WIN32
+    SetConsoleOutputCP(CP_UTF8);
+#endif
     short ar[] = {4, 3, 2, 1, 5, 6, 7};
     size_t n = sizeof(ar) / sizeof(*ar);
 

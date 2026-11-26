@@ -2,9 +2,15 @@
  * Урок #27. Указатели. Приведение типов. Константа NULL
  */
 #include <stdio.h>
+#ifdef _WIN32
+#include <windows.h>   /* SetConsoleOutputCP - русский текст в консоли Windows */
+#endif
 
 int main(void)
 {
+#ifdef _WIN32
+    SetConsoleOutputCP(CP_UTF8);
+#endif
     /* 1. Два указателя на одну переменную */
     int arg = 7;
     int *ptr_arg, *ptr;

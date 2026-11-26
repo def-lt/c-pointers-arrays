@@ -2,6 +2,9 @@
  * Урок #30. Вычисление размера массива. Инициализация массивов
  */
 #include <stdio.h>
+#ifdef _WIN32
+#include <windows.h>   /* SetConsoleOutputCP - русский текст в консоли Windows */
+#endif
 #include <stdlib.h>
 
 #define TOTAL_MARKS 13
@@ -18,6 +21,9 @@ static void print_int(const char *name, const int *a, size_t n)
 
 int main(void)
 {
+#ifdef _WIN32
+    SetConsoleOutputCP(CP_UTF8);
+#endif
     /* 1. Размер массива */
     int marks[TOTAL_MARKS] = {1, 2, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0};
     size_t bytes = sizeof(marks);

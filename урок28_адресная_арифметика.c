@@ -2,9 +2,15 @@
  * Урок #28. Адресная арифметика
  */
 #include <stdio.h>
+#ifdef _WIN32
+#include <windows.h>   /* SetConsoleOutputCP - русский текст в консоли Windows */
+#endif
 
 int main(void)
 {
+#ifdef _WIN32
+    SetConsoleOutputCP(CP_UTF8);
+#endif
     /* 1. Инкремент/декремент указателя сдвигает адрес на sizeof(тип) */
     int g = 4;
     int *ptr = &g;

@@ -2,11 +2,17 @@
  * Урок #29. Введение в массивы
  */
 #include <stdio.h>
+#ifdef _WIN32
+#include <windows.h>   /* SetConsoleOutputCP - русский текст в консоли Windows */
+#endif
 
 #define TOTAL_MARKS 13
 
 int main(void)
 {
+#ifdef _WIN32
+    SetConsoleOutputCP(CP_UTF8);
+#endif
     int marks[TOTAL_MARKS];
 
     /* обнуляем массив, чтобы не печатать "мусор" */
